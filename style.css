@@ -115,7 +115,7 @@ img { max-width: 100%; display: block; }
   font-family: 'Crimson Pro', Georgia, serif;
   font-size: 16px;
   font-weight: 600;
-  color: var(--link-blue);
+  color: var(--blue);
   text-decoration: none;
 }
 
@@ -208,7 +208,7 @@ img { max-width: 100%; display: block; }
   font-family: 'Crimson Pro', Georgia, serif;
   font-size: 27px;
   font-weight: 500;
-  color: var(--link-blue);
+  color: var(--blue);
   margin-bottom: 32px;
 }
 
