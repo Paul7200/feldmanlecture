@@ -373,6 +373,7 @@ img { max-width: 100%; display: block; }
 
 .agenda-btn {
   margin-top: 28px;
+  text-align: center;
 }
 
 .agenda-table {
