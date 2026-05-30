@@ -135,7 +135,7 @@ img { max-width: 100%; display: block; }
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(255,255,255,0.55);
+  background: rgba(255,255,255,0.18);
 }
 
 .hero-dots {
@@ -150,54 +150,59 @@ img { max-width: 100%; display: block; }
 
 .hero-content {
   position: relative;
-  max-width: 760px;
+  max-width: 920px;
   padding: 0 24px;
 }
 
 .hero-content h1 {
-  font-size: clamp(2rem, 5vw, 3.2rem);
-  font-weight: 700;
-  color: #1a1a1a;
+  font-size: 51px;
+  font-weight: 300;
+  color: #000;
   margin-bottom: 24px;
   line-height: 1.15;
 }
 
 .hero-date {
-  font-family: 'Roboto', sans-serif;
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  color: var(--teal);
-  margin-bottom: 6px;
-}
-
-.hero-venue {
-  font-family: 'Roboto', sans-serif;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  color: var(--teal);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 21px;
+  font-weight: 600;
+  color: rgb(12, 113, 195);
   text-transform: uppercase;
   margin-bottom: 4px;
 }
 
-.hero-venue a { color: var(--teal); }
+.hero-venue {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 21px;
+  font-weight: 600;
+  color: rgb(12, 113, 195);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.hero-venue a { color: rgb(12, 113, 195); }
 
 .hero-address {
-  font-size: 16px;
-  color: #444;
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 19px;
+  font-weight: 500;
+  color: #333;
   margin-bottom: 20px;
 }
 
 .hero-speakers {
-  font-size: 18px;
-  color: #222;
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 27px;
+  font-weight: 500;
+  color: #000;
   margin-bottom: 6px;
 }
 
 .hero-theme {
-  font-size: 20px;
-  color: var(--teal);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 21px;
+  font-weight: 500;
+  color: rgb(12, 113, 195);
   margin-bottom: 32px;
 }
 
