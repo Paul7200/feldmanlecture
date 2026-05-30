@@ -639,6 +639,12 @@ img { max-width: 100%; display: block; }
 /* ===========================
    RESPONSIVE
    =========================== */
+/* Hide blue sidebar before it overlaps the centered container */
+@media (max-width: 1420px) {
+  .zane-sidebar,
+  .past-speakers .zane-sidebar { display: none; }
+}
+
 @media (max-width: 900px) {
   .speaker-grid {
     grid-template-columns: 1fr;
@@ -670,9 +676,6 @@ img { max-width: 100%; display: block; }
     grid-template-columns: 1fr 1fr;
     gap: 32px;
   }
-
-  .zane-sidebar { display: none; }
-  .past-speakers .zane-sidebar { display: none; }
 
   .plenary-card { padding: 32px 24px; }
 
