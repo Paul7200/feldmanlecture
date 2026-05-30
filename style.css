@@ -3,11 +3,13 @@
    =========================== */
 
 :root {
-  --teal:      #4db8c0;
-  --blue:      #1a5fa8;
-  --dark-blue: #1a3a6b;
-  --text:      #333333;
-  --light-bg:  #f9f9f9;
+  --blue:      #0c71c3;   /* rgb(12,113,195)  — hero date/venue */
+  --link-blue: #2ea3f2;   /* rgb(46,163,242)  — nav links, coming soon */
+  --cyan:      #00b2e5;   /* rgb(0,178,229)   — past speaker name links */
+  --dark-blue: #1a3a6b;   /* registration button */
+  --teal-btn:  #2ea3f2;   /* learn more / register buttons */
+  --body-color:#666666;   /* rgb(102,102,102) — body text */
+  --head-color:#333333;   /* rgb(51,51,51)    — headings */
   --footer-bg: #111111;
 }
 
@@ -18,15 +20,17 @@ html { scroll-behavior: smooth; }
 body {
   font-family: 'Crimson Pro', Georgia, 'Times New Roman', serif;
   font-size: 18px;
-  color: var(--text);
+  font-weight: 500;
+  color: var(--body-color);
   line-height: 1.7;
 }
 
-h1, h2, h3, h4, h5, nav, .btn {
+/* Roboto for headings that need it */
+h1, h2 {
   font-family: 'Roboto', Helvetica, Arial, sans-serif;
 }
 
-a { color: var(--teal); text-decoration: none; }
+a { color: var(--link-blue); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
 img { max-width: 100%; display: block; }
@@ -44,6 +48,7 @@ img { max-width: 100%; display: block; }
   display: inline-block;
   padding: 14px 28px;
   border-radius: 30px;
+  font-family: 'Roboto', Helvetica, Arial, sans-serif;
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 1px;
@@ -54,9 +59,9 @@ img { max-width: 100%; display: block; }
 }
 .btn:hover { opacity: 0.85; text-decoration: none; }
 
-.btn-teal  { background: var(--teal); color: #fff; }
-.btn-dark  { background: #1a3a6b;     color: #fff; }
-.btn-blue  { background: var(--blue); color: #fff; }
+.btn-teal  { background: var(--teal-btn); color: #fff; }
+.btn-dark  { background: var(--dark-blue); color: #fff; }
+.btn-blue  { background: var(--blue);      color: #fff; }
 
 .center-btn {
   text-align: center;
@@ -107,14 +112,14 @@ img { max-width: 100%; display: block; }
 }
 
 .nav-links a {
-  font-family: 'Roboto', sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--teal);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--link-blue);
   text-decoration: none;
 }
 
-.nav-links a:hover { color: var(--blue); }
+.nav-links a:hover { text-decoration: underline; }
 
 /* ===========================
    HERO
@@ -128,6 +133,7 @@ img { max-width: 100%; display: block; }
   background-size: cover;
   background-position: center top;
   background-attachment: fixed;
+  background-color: #fff;        /* white base — image fades into this */
   padding: 120px 24px 80px;
 }
 
@@ -135,7 +141,7 @@ img { max-width: 100%; display: block; }
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.65);  /* strong fade matching original */
 }
 
 .hero-dots {
@@ -144,7 +150,7 @@ img { max-width: 100%; display: block; }
   background-image: url('images/dots-3.png');
   background-repeat: repeat;
   background-size: auto;
-  opacity: 0.5;
+  opacity: 0.6;
   pointer-events: none;
 }
 
@@ -159,14 +165,14 @@ img { max-width: 100%; display: block; }
   font-weight: 300;
   color: #000;
   margin-bottom: 24px;
-  line-height: 1.15;
+  line-height: 1.4;
 }
 
 .hero-date {
   font-family: 'Crimson Pro', Georgia, serif;
   font-size: 21px;
   font-weight: 600;
-  color: rgb(12, 113, 195);
+  color: var(--blue);
   text-transform: uppercase;
   margin-bottom: 4px;
 }
@@ -175,18 +181,18 @@ img { max-width: 100%; display: block; }
   font-family: 'Crimson Pro', Georgia, serif;
   font-size: 21px;
   font-weight: 600;
-  color: rgb(12, 113, 195);
+  color: var(--blue);
   text-transform: uppercase;
   margin-bottom: 4px;
 }
 
-.hero-venue a { color: rgb(12, 113, 195); }
+.hero-venue a { color: var(--blue); }
 
 .hero-address {
   font-family: 'Crimson Pro', Georgia, serif;
-  font-size: 19px;
+  font-size: 17px;
   font-weight: 500;
-  color: #333;
+  color: var(--body-color);
   margin-bottom: 20px;
 }
 
@@ -200,9 +206,9 @@ img { max-width: 100%; display: block; }
 
 .hero-theme {
   font-family: 'Crimson Pro', Georgia, serif;
-  font-size: 21px;
+  font-size: 27px;
   font-weight: 500;
-  color: rgb(12, 113, 195);
+  color: var(--link-blue);
   margin-bottom: 32px;
 }
 
@@ -236,8 +242,11 @@ img { max-width: 100%; display: block; }
 }
 
 .speaker-card p {
-  font-size: 16px;
-  line-height: 1.7;
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--body-color);
+  line-height: 1.6;
 }
 
 /* ===========================
@@ -248,12 +257,14 @@ img { max-width: 100%; display: block; }
   background: #fff;
 }
 
+/* "Plenary Sessions:" heading — Crimson Pro, not Roboto */
 .section-title {
-  font-size: 1.8rem;
-  font-weight: 700;
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 32px;
+  font-weight: 500;
   text-align: center;
   margin-bottom: 40px;
-  color: #1a1a1a;
+  color: var(--head-color);
 }
 
 .plenary-card {
@@ -265,23 +276,28 @@ img { max-width: 100%; display: block; }
   color: #fff;
 }
 
+/* Plenary 1/2/3 headings — Crimson Pro */
 .plenary-card h3 {
-  font-size: 1.3rem;
-  font-weight: 700;
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 27px;
+  font-weight: 500;
   margin-bottom: 12px;
+  color: #fff;
 }
 
 .plenary-subtitle {
-  font-family: 'Roboto', sans-serif;
-  font-size: 15px;
-  font-weight: 700;
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 18px;
+  font-weight: 500;
   margin-bottom: 18px;
-  font-style: normal;
+  color: #fff;
 }
 
 .plenary-card p {
-  font-size: 16px;
-  line-height: 1.7;
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.6;
   color: #fff;
   max-width: 800px;
   margin: 0 auto 12px;
@@ -295,18 +311,29 @@ img { max-width: 100%; display: block; }
   background: #fff;
 }
 
+/* "Overall Learning Objectives" — Roboto 50px weight 300 */
 .objectives h2 {
-  font-size: 2rem;
-  font-weight: 700;
+  font-family: 'Roboto', Helvetica, Arial, sans-serif;
+  font-size: 50px;
+  font-weight: 300;
+  color: var(--head-color);
   margin-bottom: 12px;
 }
 
 .objectives-lead {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 18px;
+  font-weight: 500;
   font-style: italic;
+  color: var(--body-color);
   margin-bottom: 16px;
 }
 
 .objectives p {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--body-color);
   margin-bottom: 16px;
   max-width: 860px;
 }
@@ -326,15 +353,23 @@ img { max-width: 100%; display: block; }
   align-items: start;
 }
 
+/* "Agenda" heading — Roboto 50px weight 300 */
 .agenda-info h2 {
-  font-size: 2.4rem;
-  font-weight: 700;
+  font-family: 'Roboto', Helvetica, Arial, sans-serif;
+  font-size: 50px;
+  font-weight: 300;
+  color: var(--head-color);
   margin-bottom: 16px;
+  text-align: center;
 }
 
 .agenda-info p {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--body-color);
   margin-bottom: 6px;
-  font-size: 17px;
+  text-align: center;
 }
 
 .agenda-btn {
@@ -344,7 +379,6 @@ img { max-width: 100%; display: block; }
 .agenda-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 16px;
 }
 
 .agenda-table th {
@@ -355,9 +389,14 @@ img { max-width: 100%; display: block; }
   font-size: 14px;
   font-weight: 700;
   border: 1px solid #ddd;
+  color: var(--head-color);
 }
 
 .agenda-table td {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--body-color);
   padding: 14px 16px;
   border: 1px solid #ddd;
   vertical-align: top;
@@ -390,7 +429,7 @@ img { max-width: 100%; display: block; }
   top: 0;
   bottom: 0;
   width: 140px;
-  background: var(--blue);
+  background: var(--dark-blue);
   z-index: 0;
 }
 
@@ -414,15 +453,21 @@ img { max-width: 100%; display: block; }
   object-fit: cover;
 }
 
+/* "Zane Feldman" heading — Roboto 50px weight 300 */
 .zane-bio h2 {
-  font-size: 2.2rem;
-  font-weight: 700;
+  font-family: 'Roboto', Helvetica, Arial, sans-serif;
+  font-size: 50px;
+  font-weight: 300;
+  color: var(--head-color);
   margin-bottom: 24px;
 }
 
 .zane-bio p {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--body-color);
   margin-bottom: 16px;
-  font-size: 17px;
 }
 
 /* ===========================
@@ -446,19 +491,24 @@ img { max-width: 100%; display: block; }
   top: 0;
   bottom: 0;
   width: 140px;
-  background: var(--blue);
+  background: var(--dark-blue);
   z-index: 0;
 }
 
+/* "Past Feldman Lecture..." heading — Roboto 50px weight 300 */
 .past-speakers h2 {
-  font-size: 2rem;
-  font-weight: 700;
+  font-family: 'Roboto', Helvetica, Arial, sans-serif;
+  font-size: 50px;
+  font-weight: 300;
+  color: var(--head-color);
   margin-bottom: 6px;
 }
 
 .past-years {
-  font-size: 16px;
-  font-weight: 600;
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--body-color);
   margin-bottom: 48px;
 }
 
@@ -478,23 +528,32 @@ img { max-width: 100%; display: block; }
   border-left: 1px solid #e8e8e8;
 }
 
+/* Year label — Roboto, matching original h5 style */
 .past-entry h4 {
-  font-family: 'Roboto', sans-serif;
-  font-size: 17px;
-  font-weight: 700;
-  color: #333;
+  font-family: 'Roboto', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--head-color);
   margin-bottom: 8px;
 }
 
 .past-entry p {
-  font-size: 15px;
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--body-color);
   line-height: 1.6;
 }
 
+/* Speaker name links — Roboto 16px #00b2e5 */
 .past-entry a {
-  color: var(--teal);
-  font-weight: 600;
+  font-family: 'Roboto', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--cyan);
 }
+
+.past-entry a:hover { text-decoration: underline; }
 
 /* ===========================
    FOOTER
@@ -522,7 +581,7 @@ img { max-width: 100%; display: block; }
 
 .footer-logo {
   max-width: 160px;
-  background: var(--blue);
+  background: var(--dark-blue);
   padding: 12px;
   border-radius: 4px;
 }
@@ -542,27 +601,32 @@ img { max-width: 100%; display: block; }
 }
 
 .footer-col ul li {
-  font-size: 14px;
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 16px;
+  font-weight: 500;
   line-height: 1.6;
   margin-bottom: 8px;
   color: #bbb;
 }
 
 .coming-soon {
-  color: var(--teal);
+  color: var(--link-blue);
   font-weight: 600;
 }
 
 .footer-col p {
-  font-size: 14px;
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 16px;
+  font-weight: 500;
   line-height: 1.7;
   margin-bottom: 16px;
+  color: #bbb;
 }
 
 .contact-email {
   display: inline-block;
-  color: var(--teal);
-  font-size: 15px;
+  color: var(--link-blue);
+  font-size: 16px;
   font-weight: 600;
   word-break: break-all;
 }
@@ -611,6 +675,11 @@ img { max-width: 100%; display: block; }
   .past-speakers .zane-sidebar { display: none; }
 
   .plenary-card { padding: 32px 24px; }
+
+  .objectives h2,
+  .agenda-info h2,
+  .zane-bio h2,
+  .past-speakers h2 { font-size: 36px; }
 }
 
 @media (max-width: 600px) {
@@ -619,4 +688,6 @@ img { max-width: 100%; display: block; }
   .hero-buttons { flex-direction: column; }
   .footer-grid { grid-template-columns: 1fr; }
   .hero { background-attachment: scroll; }
+  .hero-content h1 { font-size: 36px; }
+  .section-title { font-size: 26px; }
 }
