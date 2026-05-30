@@ -1,0 +1,617 @@
+/* ===========================
+   FELDMAN LECTURE — STATIC SITE
+   =========================== */
+
+:root {
+  --teal:      #4db8c0;
+  --blue:      #1a5fa8;
+  --dark-blue: #1a3a6b;
+  --text:      #333333;
+  --light-bg:  #f9f9f9;
+  --footer-bg: #111111;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Crimson Pro', Georgia, 'Times New Roman', serif;
+  font-size: 18px;
+  color: var(--text);
+  line-height: 1.7;
+}
+
+h1, h2, h3, h4, h5, nav, .btn {
+  font-family: 'Roboto', Helvetica, Arial, sans-serif;
+}
+
+a { color: var(--teal); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+img { max-width: 100%; display: block; }
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ===========================
+   BUTTONS
+   =========================== */
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: opacity 0.2s;
+  cursor: pointer;
+}
+.btn:hover { opacity: 0.85; text-decoration: none; }
+
+.btn-teal  { background: var(--teal); color: #fff; }
+.btn-dark  { background: #1a3a6b;     color: #fff; }
+.btn-blue  { background: var(--blue); color: #fff; }
+
+.center-btn {
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* ===========================
+   NAV
+   =========================== */
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 16px 24px;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+#navbar.scrolled {
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+}
+
+.nav-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+#navbar.scrolled .nav-logo { color: var(--dark-blue); }
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 32px;
+}
+
+.nav-links a {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--teal);
+  text-decoration: none;
+}
+
+.nav-links a:hover { color: var(--blue); }
+
+/* ===========================
+   HERO
+   =========================== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: url('images/hero-hospital.jpg');
+  background-size: cover;
+  background-position: center top;
+  background-attachment: fixed;
+  padding: 120px 24px 80px;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.55);
+}
+
+.hero-dots {
+  position: absolute;
+  inset: 0;
+  background-image: url('images/dots-3.png');
+  background-repeat: repeat;
+  background-size: auto;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  max-width: 760px;
+  padding: 0 24px;
+}
+
+.hero-content h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 24px;
+  line-height: 1.15;
+}
+
+.hero-date {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--teal);
+  margin-bottom: 6px;
+}
+
+.hero-venue {
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--teal);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.hero-venue a { color: var(--teal); }
+
+.hero-address {
+  font-size: 16px;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.hero-speakers {
+  font-size: 18px;
+  color: #222;
+  margin-bottom: 6px;
+}
+
+.hero-theme {
+  font-size: 20px;
+  color: var(--teal);
+  margin-bottom: 32px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* ===========================
+   SPEAKERS
+   =========================== */
+.speakers {
+  padding: 80px 0;
+  background: #fff;
+}
+
+.speaker-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-bottom: 20px;
+}
+
+.speaker-card img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  object-position: top;
+  margin-bottom: 20px;
+}
+
+.speaker-card p {
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* ===========================
+   PLENARY SESSIONS
+   =========================== */
+.plenaries {
+  padding: 60px 0 80px;
+  background: #fff;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #1a1a1a;
+}
+
+.plenary-card {
+  background: #7cc5c9;
+  border-radius: 4px;
+  padding: 40px 60px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.plenary-card h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.plenary-subtitle {
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 18px;
+  font-style: normal;
+}
+
+.plenary-card p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #fff;
+  max-width: 800px;
+  margin: 0 auto 12px;
+}
+
+/* ===========================
+   LEARNING OBJECTIVES
+   =========================== */
+.objectives {
+  padding: 60px 0 80px;
+  background: #fff;
+}
+
+.objectives h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.objectives-lead {
+  font-style: italic;
+  margin-bottom: 16px;
+}
+
+.objectives p {
+  margin-bottom: 16px;
+  max-width: 860px;
+}
+
+/* ===========================
+   AGENDA
+   =========================== */
+.agenda {
+  padding: 80px 0;
+  background: #fff;
+}
+
+.agenda-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.agenda-info h2 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.agenda-info p {
+  margin-bottom: 6px;
+  font-size: 17px;
+}
+
+.agenda-btn {
+  margin-top: 28px;
+}
+
+.agenda-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+}
+
+.agenda-table th {
+  background: #f0f0f0;
+  padding: 12px 16px;
+  text-align: left;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  border: 1px solid #ddd;
+}
+
+.agenda-table td {
+  padding: 14px 16px;
+  border: 1px solid #ddd;
+  vertical-align: top;
+}
+
+.agenda-table tr:nth-child(even) td { background: #fafafa; }
+
+/* ===========================
+   ZANE FELDMAN
+   =========================== */
+.zane {
+  position: relative;
+  padding: 80px 0;
+  background: #fff;
+  overflow: hidden;
+}
+
+.zane-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 60px;
+  align-items: start;
+  position: relative;
+  z-index: 1;
+}
+
+.zane-sidebar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 140px;
+  background: var(--blue);
+  z-index: 0;
+}
+
+/* Dot pattern behind zane section */
+.zane::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background-image: url('images/dots-3.png');
+  background-repeat: repeat;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.zane-photo img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.zane-bio h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.zane-bio p {
+  margin-bottom: 16px;
+  font-size: 17px;
+}
+
+/* ===========================
+   PAST SPEAKERS
+   =========================== */
+.past-speakers {
+  position: relative;
+  padding: 80px 0;
+  background: #fff;
+  overflow: hidden;
+}
+
+.past-speakers .container {
+  position: relative;
+  z-index: 1;
+}
+
+.past-speakers .zane-sidebar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 140px;
+  background: var(--blue);
+  z-index: 0;
+}
+
+.past-speakers h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.past-years {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 48px;
+}
+
+.past-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.past-entry {
+  padding: 28px 32px 28px 0;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.past-entry:nth-child(even) {
+  padding-left: 32px;
+  border-left: 1px solid #e8e8e8;
+}
+
+.past-entry h4 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.past-entry p {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.past-entry a {
+  color: var(--teal);
+  font-weight: 600;
+}
+
+/* ===========================
+   FOOTER
+   =========================== */
+.site-footer {
+  background: var(--footer-bg);
+  color: #ccc;
+  padding: 60px 0;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 180px 1fr 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.footer-name {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: #fff;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.footer-logo {
+  max-width: 160px;
+  background: var(--blue);
+  padding: 12px;
+  border-radius: 4px;
+}
+
+.footer-col h5 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col ul li {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 8px;
+  color: #bbb;
+}
+
+.coming-soon {
+  color: var(--teal);
+  font-weight: 600;
+}
+
+.footer-col p {
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.contact-email {
+  display: inline-block;
+  color: var(--teal);
+  font-size: 15px;
+  font-weight: 600;
+  word-break: break-all;
+}
+
+.contact-email:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+@media (max-width: 900px) {
+  .speaker-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto 20px;
+  }
+
+  .agenda-layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .zane-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .zane-photo { max-width: 320px; }
+
+  .past-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .past-entry:nth-child(even) {
+    padding-left: 0;
+    border-left: none;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .zane-sidebar { display: none; }
+  .past-speakers .zane-sidebar { display: none; }
+
+  .plenary-card { padding: 32px 24px; }
+}
+
+@media (max-width: 600px) {
+  .nav-links { gap: 16px; }
+  .nav-logo { display: none; }
+  .hero-buttons { flex-direction: column; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .hero { background-attachment: scroll; }
+}
