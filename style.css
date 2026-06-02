@@ -623,6 +623,15 @@ img { max-width: 100%; display: block; }
   color: #bbb;
 }
 
+.coi-link {
+  color: var(--link-blue);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.coi-link:hover { color: #fff; text-decoration: underline; }
+
 .contact-email {
   display: inline-block;
   color: var(--link-blue);
