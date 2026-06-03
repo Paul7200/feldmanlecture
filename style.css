@@ -649,6 +649,30 @@ img { max-width: 100%; display: block; }
    RESPONSIVE
    =========================== */
 /* Hide blue sidebar before it overlaps the centered container */
+/* ===========================
+   SITE CREDIT
+   =========================== */
+.site-credit {
+  background: #0a0a0a;
+  text-align: center;
+  padding: 10px 24px;
+  font-family: 'Roboto', Helvetica, Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  color: #555;
+  letter-spacing: 0.5px;
+}
+
+.site-credit a {
+  color: #666;
+  text-decoration: none;
+}
+
+.site-credit a:hover {
+  color: #999;
+  text-decoration: none;
+}
+
 @media (max-width: 1420px) {
   .zane-sidebar,
   .past-speakers .zane-sidebar { display: none; }
